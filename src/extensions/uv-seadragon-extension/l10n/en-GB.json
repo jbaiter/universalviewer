@@ -188,10 +188,8 @@
         "cancel": "Cancel"
       }
     },
-    "searchFooterPanel":
-    {
-      "content":
-      {
+    "searchFooterPanel": {
+      "content":  {
         "clearSearch": "Clear",
         "defaultLabel": "-",
         "displaying": "{0} {1} of {2}",
