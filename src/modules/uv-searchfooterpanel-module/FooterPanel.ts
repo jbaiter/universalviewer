@@ -6,6 +6,7 @@ import {ISeadragonExtension} from "../../extensions/uv-seadragon-extension/ISead
 import {Mode} from "../../extensions/uv-seadragon-extension/Mode";
 import {AnnotationResults} from "../uv-shared-module/AnnotationResults";
 import {UVUtils} from "../../Utils";
+import URLDataProvider from "../../URLDataProvider";
 import AnnotationGroup = Manifold.AnnotationGroup;
 
 export class FooterPanel extends BaseFooterPanel {
@@ -254,6 +255,12 @@ export class FooterPanel extends BaseFooterPanel {
         if (!positionMarkerEnabled) {
             this.$pagePositionMarker.hide();
             this.$pagePositionLabel.hide();
+        }
+
+        const queryFromUrl = new URLDataProvider(true).get('q', '');
+        if (queryFromUrl) {
+            this.$searchText.val(queryFromUrl);
+            this.search(queryFromUrl);
         }
     }
 
